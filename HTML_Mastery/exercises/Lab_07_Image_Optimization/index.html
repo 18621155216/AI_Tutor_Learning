@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 07: Image Optimization</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            /* 确保图片不会溢出容器 */
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        picture {
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>图像资源引入与性能优化练习</h1>
+
+    <h2>1. 使用 `srcset` 和 `sizes` 实现响应式图像</h2>
+    <p>请在下方 `<img>` 标签中，根据任务要求，使用 `srcset` 和 `sizes` 属性。</p>
+    <!-- 任务: 使用 srcset 和 sizes 实现响应式图像 -->
+    <!-- 假设 images/ 目录下有 small.jpg (400px), medium.jpg (800px), large.jpg (1200px) -->
+    <img srcset="images/small.jpg 400w, images/medium.jpg 800w, images/large.jpg 1200w"
+        sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px" alt="响应式示例图片" width="1200" height="800">
+
+    <h2>2. 使用 `picture` 标签提供不同格式的图像</h2>
+    <p>请在下方 `picture` 标签中，根据任务要求，提供 WebP 和 JPG 两种格式的图像。</p>
+    <!-- 任务: 使用 picture 标签提供 WebP 和 JPG 两种格式的图像 -->
+    <!-- 假设 images/ 目录下有 example.webp 和 example.jpg -->
+    <picture>
+        <!-- <source> 标签在这里 -->
+        <source srcset="images/example.webp" type="image/webp">
+        <source srcset="images/example.jpg" type="image/jpeg">
+        <!-- <img> 标签在这里 -->
+        <img src="images/example.jpg" alt="格式优化示例图片" width="800" height="600">
+    </picture>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 08: Form Basics</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            width: auto;
+        }
+
+        button {
+            padding: 5px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>用户注册表单</h1>
+
+    <!-- TODO: 1. 创建一个 <form> 容器，设置 method 和 action -->
+    <!-- TODO: 2. 使用 <fieldset> 和 <legend> 进行分组 -->
+
+    <!-- TODO: 3. 添加用户名输入框 (显式 label 绑定，必填) -->
+
+    <!-- TODO: 4. 添加密码输入框 (隐式 label 绑定) -->
+
+    <!-- TODO: 5. 添加性别单选框 (radio) -->
+
+    <!-- TODO: 6. 添加兴趣爱好多选框 (checkbox) -->
+
+    <!-- TODO: 7. 添加提交按钮 -->
+    <form action="#" method="post">
+        <fieldset>
+            <legend>新用户注册</legend>
+            <div>
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="name" required />
+            </div>
+            <div>
+                <label for="pwd">密码</label>
+                <input type="password" id="pwd" name="password" />
+            </div>
+            <div class="radio-group">
+                性别：
+                <label><input type="radio" name="gender" value="male"> 男</label>
+                <label><input type="radio" name="gender" value="female"> 女</label>
+            </div>
+            <div class="checkbox-group">
+                兴趣爱好：
+                <label> <input type="checkbox" name="hobby" value="coding"> coding</label>
+                <label><input type="checkbox" name="hobby" value="reading"> reading</label>
+                <label><input type="checkbox" name="hobby" value="sport"> sport</label>
+                </label>
+            </div>
+            <div><input type="submit" value="提交"></div>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

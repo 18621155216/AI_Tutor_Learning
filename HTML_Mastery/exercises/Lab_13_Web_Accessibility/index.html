@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 13: Web Accessibility (A11y)</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 15px; margin-bottom: 20px; }
+        nav a { text-decoration: none; color: #007bff; padding: 5px 10px; border: 1px solid #007bff; border-radius: 4px; }
+        nav a:focus { outline: 2px solid orange; outline-offset: 2px; } /* 确保焦点可见 */
+        .icon-button {
+            background: none;
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .icon-button:focus { outline: 2px solid orange; outline-offset: 2px; }
+        img { max-width: 300px; height: auto; display: block; margin-bottom: 20px; }
+        .live-region { border: 1px solid #007bff; padding: 10px; border-radius: 4px; background-color: #e7f3ff; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Web 可访问性 (A11y) 实战</h1>
+
+    <!-- TODO: 1. 语义化按钮 (图标按钮，带 aria-label) -->
+    <h2>图标按钮</h2>
+    <button class="icon-button" aria-label="关闭">❌</button>
+
+    <!-- TODO: 2. 图片 alt 属性 -->
+    <h2>图片描述</h2>
+    <!-- 假设 images/placeholder.jpg 存在 -->
+    <img src="../../exercises/Lab_07_Image_Optimization/images/large.jpg" alt="一张美丽的风景图片，展示了山脉和湖泊">
+
+    <!-- TODO: 3. 键盘导航菜单 -->
+    <h2>导航菜单</h2>
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">产品</a></li>
+            <li><a href="#">服务</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- TODO: 4. 动态内容区域 (aria-live) -->
+    <h2>动态消息区域</h2>
+    <div class="live-region" role="status" aria-live="polite">
+        <p>这里是动态更新的消息，屏幕阅读器会礼貌地宣布。</p>
+    </div>
+
+</body>
+</html>

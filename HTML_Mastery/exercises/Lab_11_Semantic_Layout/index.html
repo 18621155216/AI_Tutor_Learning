@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 11: Semantic Layout</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header,
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background: #444;
+      margin: 0;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      display: flex;
+      max-width: 1000px;
+      margin: 20px auto;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    section {
+      flex: 3;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    aside {
+      flex: 1;
+      background: #eee;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    article {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    article:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TODO: 请按照任务要求构建语义化布局 -->
+  <header>
+    <h1>header title</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>今日焦点</h2>
+      <article>
+        <h3>Article Title</h3>
+        <p>Article content</p>
+      </article>
+      <article>
+        <h3>Article Title</h3>
+        <p>Article content</p>
+      </article>
+    </section>
+    <aside>
+      <h2>侧边广告</h2>
+      <p>侧边栏内容</p>
+    </aside>
+  </main>
+  <footer>
+    <p>&copy; 2023 My Website. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

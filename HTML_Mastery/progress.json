@@ -1,0 +1,97 @@
+{
+  "current_lesson": "18",
+  "status": "completed",
+  "last_session": "2026-04-03",
+  "weak_points": [
+    "HTML Entities for displaying code inside <code>.",
+    "Correct nesting of <ul>/ol inside <li> tags.",
+    "Refine label binding for radio/checkbox inputs."
+  ],
+  "mastery_score": 100,
+  "history": [
+    {
+      "lesson": "01",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Initial skeleton. Mastered."
+    },
+    {
+      "lesson": "02",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Foundation Plus. Mastered style/script/TDK/semantics."
+    },
+    {
+      "lesson": "03",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Hyperlinks and paths. Mastered."
+    },
+    {
+      "lesson": "06",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Lists & Descriptions. Minor nesting issues."
+    },
+    {
+      "lesson": "07",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Image Optimization. Mastered srcset and picture."
+    },
+    {
+      "lesson": "08",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Form Basics. Minor label binding issues for radio/checkbox."
+    },
+    {
+      "lesson": "09",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Interactive Components. Mastered textarea, select, datalist."
+    },
+    {
+      "lesson": "10",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Multimedia & Embeds. Mastered video and iframe security."
+    },
+    {
+      "lesson": "11",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Semantic Layout. Mastered header, nav, main, section, article, aside, footer."
+    },
+    {
+      "lesson": "12",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Structured Data Tables. Mastered table semantics."
+    },
+    {
+      "lesson": "13",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Web Accessibility. Mastered ARIA and keyboard navigation."
+    },
+    {
+      "lesson": "14",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Client Storage & Preload. Mastered performance optimization."
+    },
+    {
+      "lesson": "16",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "SVG Basics. Fast-passed."
+    },
+    {
+      "lesson": "18",
+      "date": "2026-04-03",
+      "result": "passed",
+      "note": "Modern Interactive Tags. Fast-passed."
+    }
+  ]
+}

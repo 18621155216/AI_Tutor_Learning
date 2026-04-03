@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 14: Client Storage & Preload</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+  <!-- TODO: 3. 资源预加载：预加载字体文件 -->
+  <!-- 假设 fonts/ 目录下有 font.woff2 -->
+  <link rel="preload" href="fonts/font.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- TODO: 4. 资源预加载：预抓取图片 -->
+  <!-- 假设 images/ 目录下有 next-page-image.jpg -->
+  <link rel="prefetch" href="images/next-page-image.jpg" as="image">
+</head>
+
+<body>
+  <h1>客户端存储与性能优化练习</h1>
+
+  <div class="section">
+    <h2>LocalStorage 演示</h2>
+    <div id="localStorageContent">
+      <!-- TODO: 1. LocalStorage 逻辑实现 -->
+      <!-- 页面加载时检查 username，显示欢迎信息或输入框 -->
+      <!-- 添加一个按钮，点击后清除 username -->
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>SessionStorage 演示</h2>
+    <div id="sessionStorageContent">
+      <!-- TODO: 2. SessionStorage 逻辑实现 -->
+      <!-- 页面加载时生成并显示 session_id -->
+    </div>
+  </div>
+
+  <script>
+    // LocalStorage 逻辑
+    const localStorageContent = document.getElementById('localStorageContent');
+    let username = localStorage.getItem('username');
+
+    if (username) {
+      localStorageContent.innerHTML = `<p class="message">欢迎回来，${username}！</p><button id="clearUsername">清除用户名</button>`;
+      document.getElementById('clearUsername').addEventListener('click', () => {
+        localStorage.removeItem('username');
+        location.reload(); // 重新加载页面以反映变化
+      });
+    } else {
+      localStorageContent.innerHTML = `
+                <p>请输入您的用户名：</p>
+                <input type="text" id="usernameInput" placeholder="您的名字">
+                <button id="saveUsername">保存用户名</button>
+            `;
+      document.getElementById('saveUsername').addEventListener('click', () => {
+        const input = document.getElementById('usernameInput');
+        if (input.value) {
+          localStorage.setItem('username', input.value);
+          location.reload();
+        }
+      });
+    }
+
+    // SessionStorage 逻辑
+    const sessionStorageContent = document.getElementById('sessionStorageContent');
+    let sessionId = sessionStorage.getItem('session_id');
+    if (!sessionId) {
+      sessionId = 'sess_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('session_id', sessionId);
+    }
+    sessionStorageContent.innerHTML = `<p class="message">当前会话 ID: ${sessionId}</p>`;
+  </script>
+</body>
+
+</html>

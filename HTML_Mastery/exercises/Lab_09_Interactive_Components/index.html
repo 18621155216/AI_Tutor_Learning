@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 09: Interactive Components</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        .form-item {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        textarea,
+        select,
+        input {
+            width: 100%;
+            max-width: 400px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* 仅允许纵向调整大小 */
+    </style>
+</head>
+
+<body>
+    <h1>高级交互组件练习</h1>
+
+    <form action="#" method="post">
+        <!-- TODO: 1. 添加多行文本框 (自我介绍)，设置 rows="4" -->
+        <div class="form-item">
+            <label for="bio">自我介绍</label>
+            <!-- 在这里编写 textarea -->
+            <textarea id="bio" name="bio" rows="4" placeholder="请输入自我介绍"></textarea>
+        </div>
+
+        <!-- TODO: 2. 添加下拉列表 (所在地区)，包含 optgroup -->
+        <div class="form-item">
+            <label for="location">所在地区</label>
+            <!-- 在这里编写 select 和 optgroup -->
+            <select id="location" name="location">
+                <optgroup label="一线城市">
+                    <option value="beijing">北京</option>
+                    <option value="shanghai">上海</option>
+                    <option value="guangzhou">广州</option>
+                    <option value="shenzhen">深圳</option>
+                </optgroup>
+                <optgroup label="其他城市">
+                    <option value="hangzhou">杭州</option>
+                    <option value="chengdu">成都</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- TODO: 3. 添加智能建议输入框 (常用编程语言)，绑定 datalist -->
+        <div class="form-item">
+            <label for="lang">常用编程语言</label>
+            <!-- 在这里编写 input 和 datalist -->
+            <input type="text" id="lang" name="lang" list="programming-languages">
+            <datalist id="programming-languages">
+                <option value="python"></option>
+                <option value="java"></option>
+                <option value="javascript"></option>
+                <option value="c++"></option>
+            </datalist>
+        </div>
+
+        <button type="submit">提交信息</button>
+    </form>
+</body>
+
+</html>
