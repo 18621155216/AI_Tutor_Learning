@@ -1,0 +1,11 @@
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Trae/IDE-specific configs if needed
+.vscode/
+
+# Ignore common project artifacts (if any)
+node_modules/
+dist/
+build/
