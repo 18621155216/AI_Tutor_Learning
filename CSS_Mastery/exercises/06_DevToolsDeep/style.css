@@ -1,0 +1,50 @@
+/* 基础 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 40px;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 1. 样式冲突诊断挑战 */
+.title {
+  color: blue;
+  /* 你预想的深蓝色 */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* 嘿嘿，我悄悄在这里写了一个选择器把上面的颜色覆盖了，你能用 Computed 找出来吗？ */
+div h1 {
+  color: red;
+}
+
+/* 2. 状态模拟挑战 */
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* 我这里写了 hover，但为什么悬停没变色？（提示：我故意写错了属性名） */
+.btn:hover {
+  background-color: #2980b9;
+}

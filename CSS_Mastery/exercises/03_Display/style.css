@@ -1,0 +1,49 @@
+/* 基础 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  line-height: 2;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+hr {
+  margin: 30px 0;
+}
+
+/* 1. 块级元素默认表现 */
+.block-box {
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  margin-bottom: 10px;
+  /* 任务：尝试使用 display: inline-block; 让它们并排显示 */
+  display: inline-block;
+}
+
+/* 2. 行内元素默认表现 */
+.inline-box {
+  background-color: #e0f7fa;
+  border: 1px solid #00acc1;
+  /* 任务：尝试设置 width: 200px; height: 100px; 看看是否有用 */
+  width: 200px;
+  height: 100px;
+}
+
+/* 3. 改变显示模式，打造一个大按钮 */
+.btn {
+  background-color: #3f51b5;
+  color: white;
+  text-decoration: none;
+  /* 任务：在这里通过 display, padding, margin, width, height 把它变成一个漂亮的按钮
+   */
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+}

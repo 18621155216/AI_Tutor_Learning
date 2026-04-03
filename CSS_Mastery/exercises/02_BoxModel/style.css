@@ -1,0 +1,29 @@
+/* 1. 全局重置 (让所有盒子表现一致) */
+* {
+  box-sizing: border-box; /* 试试把这一行注释掉，看看盒子宽度的变化 */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* 2. 盒子的构成 */
+.box {
+  background-color: #f0f0f0;
+  width: 300px;
+  
+  /* 在下面添加代码，体验盒子模型 */
+  padding: 20px; /* 内边距：内容到边框的距离 */
+  border: 5px solid #333; /* 边框：包裹内容的线 */
+  margin-bottom: 20px; /* 外边距：盒子与盒子之间的距离 */
+}
+
+.secondary {
+  background-color: #e0f7fa;
+}

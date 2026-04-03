@@ -1,0 +1,58 @@
+/* 基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- 挑战开始 --- */
+
+/* 1. 让标题变成绿色 */
+h1 {
+  color: red; /* 这是一个元素选择器 (0,0,0,1) */
+}
+
+#main-title {
+  color: black; /* 这是一个 ID 选择器 (0,1,0,0) */
+}
+
+/* 在这里添加你的代码，尝试通过提高权重来让它变成绿色 */
+
+
+/* 2. 让描述段落变成蓝色 */
+p.description {
+  color: grey; /* 一个元素 + 一个类 (0,0,1,1) */
+}
+
+.description {
+  color: red; /* 一个类 (0,0,1,0) */
+}
+
+/* 在这里添加你的代码，尝试通过提高权重来让它变成蓝色 */
+
+
+/* 3. 让列表中的 active 项变成橙色 */
+.list .item {
+  color: black; /* 两个类 (0,0,2,0) */
+}
+
+ul li.active {
+  color: grey; /* 两个元素 + 一个类 (0,0,1,2) */
+}
+
+/* 在这里添加你的代码，尝试通过提高权重来让它变成橙色 */

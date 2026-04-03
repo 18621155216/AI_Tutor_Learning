@@ -1,0 +1,15 @@
+/* 1. 标签选择器：直接选中所有 p 标签 */
+p {
+  color: gray;
+}
+
+/* 2. 类选择器：在名字前加一个点 . */
+.blue-text {
+  color: blue;
+}
+
+/* 3. ID 选择器：在名字前加一个井号 # */
+#special-one {
+  color: red;
+  font-weight: bold;
+}

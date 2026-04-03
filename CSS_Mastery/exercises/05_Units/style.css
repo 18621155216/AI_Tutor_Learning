@@ -1,0 +1,71 @@
+/* 1. 根元素字号：修改这里会影响所有 rem 单位 */
+html {
+  font-size: 16px;
+  /* 默认值 */
+}
+
+/* 2. 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+/* 3. 不同的单位盒子 */
+.box {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s;
+  /* 动画过渡 */
+}
+
+/* 任务：在这里补全宽度设置 */
+.px-box {
+  width: 300px;
+  background-color: #e74c3c;
+  /* 红色 */
+}
+
+.rem-box {
+  width: 18.75rem;
+  /* 18.75 * 16 = 300px */
+  background-color: #2ecc71;
+  /* 绿色 */
+}
+
+.vw-box {
+  width: 30vw;
+  /* 屏幕宽度的 30% */
+  background-color: #f1c40f;
+  /* 黄色 */
+}
+
+.controls {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-left: 5px solid #333;
+}
+
+.controls p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.controls li {
+  margin-bottom: 5px;
+  color: #666;
+}
