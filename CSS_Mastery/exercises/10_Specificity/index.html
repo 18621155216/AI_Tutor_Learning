@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 10 - 权重与层叠（深入）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS 特异性与层叠 - 高级概念</h1>
+
+  <section class="lab">
+    <h2>任务 A：特异性计算挑战</h2>
+    <p>不修改 HTML，只修改 CSS，通过调整选择器特异性实现目标颜色</p>
+
+    <div class="container task-a">
+      <div class="target" id="target1">目标1：需要变成绿色</div>
+      <div class="target" id="target2">目标2：需要变成蓝色</div>
+      <div class="target special">目标3：需要变成橙色</div>
+    </div>
+
+    <div class="hint">
+      <strong>提示：</strong>CSS 中已经写好了各种选择器。你需要：
+      <ol>
+        <li>为每个目标元素计算当前生效的选择器特异性</li>
+        <li>通过添加/修改选择器，让正确的颜色生效</li>
+        <li>不要使用 !important，只调整特异性</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 B：!important 陷阱</h2>
+    <p>体验 !important 的威力与问题，学习如何合理使用</p>
+
+    <div class="container task-b">
+      <div class="box" id="important-box">
+        这个盒子有内联样式和多个 CSS 规则
+        <p class="inner-text">内部的文字也需要特殊处理</p>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ol>
+        <li>不修改 HTML（包括内联样式）</li>
+        <li>让盒子背景变成黄色</li>
+        <li>让内部文字变成白色</li>
+        <li>思考：为什么 !important 是最后的手段？</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 C：继承控制</h2>
+    <p>使用 inherit、initial、unset 关键字控制样式继承</p>
+
+    <div class="container task-c">
+      <div class="parent" style="color: navy; font-size: 20px; border: 2px solid navy;">
+        父元素（有自定义样式）
+        <div class="child child-inherit">child-inherit：继承父元素的颜色</div>
+        <div class="child child-initial">child-initial：使用属性的初始值</div>
+        <div class="child child-unset">child-unset：如果是继承属性就继承，否则用初始值</div>
+        <div class="child child-normal">child-normal：普通子元素（对比用）</div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>在 CSS 中为每个 .child 类添加相应样式：
+      <ul>
+        <li><code>.child-inherit</code>：继承父元素的颜色</li>
+        <li><code>.child-initial</code>：使用字体大小的初始值</li>
+        <li><code>.child-unset</code>：如果是继承属性就继承，否则用初始值</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 任务：在 style.css 中完成所有挑战 -->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12 - 响应式设计 (RWD)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">Responsive Design</div>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">关于</a></li>
+          <li><a href="#">服务</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>响应式设计让网页适配所有设备</h1>
+        <p>从手机到桌面电脑，提供一致的用户体验</p>
+        <button class="cta-button">了解更多</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>响应式设计核心特性</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>流体布局</h3>
+            <p>使用相对单位和弹性布局，让页面元素随屏幕尺寸自动调整</p>
+          </div>
+          <div class="feature-card">
+            <h3>媒体查询</h3>
+            <p>根据屏幕尺寸应用不同的样式规则</p>
+          </div>
+          <div class="feature-card">
+            <h3>响应式图片</h3>
+            <p>图片自动适应容器大小，避免溢出</p>
+          </div>
+          <div class="feature-card">
+            <h3>弹性排版</h3>
+            <p>字体大小随屏幕尺寸自动调整</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <h2>响应式图片画廊</h2>
+        <div class="gallery-grid">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=responsive%20web%20design%20concept&image_size=square" alt="响应式设计概念">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20friendly%20website&image_size=square" alt="移动友好网站">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fluid%20layout%20design&image_size=square" alt="流体布局设计">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=responsive%20navigation%20menu&image_size=square" alt="响应式导航菜单">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=media%20queries%20css&image_size=square" alt="CSS媒体查询">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=responsive%20typography&image_size=square" alt="响应式排版">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <h2>联系我们</h2>
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">姓名</label>
+              <input type="text" id="name" placeholder="请输入姓名">
+            </div>
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" placeholder="请输入邮箱">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">留言</label>
+            <textarea id="message" placeholder="请输入留言"></textarea>
+          </div>
+          <button type="submit" class="submit-button">提交</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 响应式设计教程</p>
+    </div>
+  </footer>
+
+  <script>
+    // 移动端菜单切换
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

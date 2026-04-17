@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  --dark-color: #1e293b;
+  --light-color: #f8fafc;
+  --gray-color: #64748b;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  
+  /* 用于数学函数的变量 */
+  --base-size: 16px;
+  --container-width: 1200px;
+  --spacing-unit: 1rem;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  padding: 24px;
+}
+
+h1 {
+  margin-bottom: 32px;
+  color: var(--dark-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.lab {
+  margin-bottom: 48px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  margin-bottom: 12px;
+  color: var(--dark-color);
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--gray-color);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.container {
+  border: 2px dashed var(--border-color);
+  background: #f1f5f9;
+  min-height: 200px;
+  padding: 24px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.instructions {
+  background: #f0f9ff;
+  border-left: 4px solid var(--primary-color);
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.instructions ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 6px;
+}
+
+/* ========== 任务 A：calc() 函数 ========== */
+
+.task-a {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.calc-box {
+  background: var(--primary-color);
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+}
+
+.calc-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.calc-box.width-calc {
+  width: calc(100% - 100px);
+  min-width: 200px;
+}
+
+.calc-box.height-calc {
+  height: calc(200px - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-box.padding-calc {
+  padding: calc(20px + 10%);
+}
+
+.calc-box.font-calc {
+  font-size: calc(16px + 2vw);
+}
+
+.calc-box.complex-calc {
+  width: calc((100% - 20px) / 3);
+  min-width: 150px;
+}
+
+/* ========== 任务 B：clamp() 函数 ========== */
+
+.task-b {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clamp-box {
+  background: var(--secondary-color);
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+}
+
+.clamp-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+}
+
+.clamp-box.font-clamp {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.clamp-box.width-clamp {
+  width: clamp(200px, 50%, 500px);
+}
+
+.clamp-box.padding-clamp {
+  padding: clamp(10px, 5vw, 30px);
+}
+
+.clamp-box.margin-clamp {
+  margin: clamp(10px, 2vw, 20px);
+}
+
+/* ========== 任务 C：min() 和 max() 函数 ========== */
+
+.task-c {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.minmax-box {
+  background: var(--accent-color);
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+}
+
+.minmax-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+}
+
+.minmax-box.min-width {
+  width: min(50%, 500px);
+}
+
+.minmax-box.max-width {
+  width: max(300px, 30%);
+}
+
+.minmax-box.min-font {
+  font-size: min(24px, 5vw);
+}
+
+.minmax-box.max-font {
+  font-size: max(16px, 2vw);
+}
+
+/* ========== 任务 D：数学函数组合使用 ========== */
+
+.task-d {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.combined-box {
+  background: #8b5cf6;
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  max-width: 800px;
+  width: 100%;
+}
+
+.combined-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
+}
+
+.combined-box.complex-combination {
+  font-size: clamp(1rem, calc(1rem + 2vw), 2rem);
+}
+
+.combined-box.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 16px;
+}
+
+.combined-box.grid-layout > div {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  border-radius: var(--border-radius);
+}
+
+.combined-box.responsive-spacing {
+  padding: clamp(10px, 2vw, 20px);
+}
+
+/* ========== 任务 E：数学函数与 CSS 变量 ========== */
+
+.task-e {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.variable-math-box {
+  --font-size: calc(var(--base-size) * 1.2);
+  --padding: calc(var(--base-size) * 1.5);
+  --width: min(calc(100% - 40px), 600px);
+  
+  background: var(--primary-color);
+  color: white;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  text-align: center;
+  width: var(--width);
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+}
+
+.variable-math-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.variable-math-box h3 {
+  font-size: var(--font-size);
+  margin-bottom: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.controls button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* ========== 任务 F：实际应用案例 ========== */
+
+.task-f {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.card {
+  background: white;
+  padding: clamp(20px, 4vw, 32px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--gray-color);
+  margin-bottom: 0;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  color: white;
+  padding: clamp(40px, 10vw, 80px);
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  min-height: clamp(300px, 50vh, 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 4vw, 32px);
+}
+
+.hero-section h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: white;
+  margin-bottom: 0;
+}
+
+.hero-section p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+.hero-button {
+  padding: clamp(12px, 3vw, 16px) clamp(24px, 5vw, 32px);
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== 辅助样式 ========== */
+
+code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--dark-color);
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+  }
+  
+  .lab {
+    padding: 16px;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  .task-a, .task-b, .task-c {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .calc-box, .clamp-box, .minmax-box {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 16px;
+  }
+  
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}

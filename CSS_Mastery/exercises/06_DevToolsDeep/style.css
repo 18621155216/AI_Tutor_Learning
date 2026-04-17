@@ -29,8 +29,8 @@ body {
 }
 
 /* 嘿嘿，我悄悄在这里写了一个选择器把上面的颜色覆盖了，你能用 Computed 找出来吗？ */
-div h1 {
-  color: red;
+.card h1 {
+  color: gray;
 }
 
 /* 2. 状态模拟挑战 */
@@ -46,5 +46,5 @@ div h1 {
 
 /* 我这里写了 hover，但为什么悬停没变色？（提示：我故意写错了属性名） */
 .btn:hover {
-  background-color: #2980b9;
+  backgroud-color: #2980b9;
 }

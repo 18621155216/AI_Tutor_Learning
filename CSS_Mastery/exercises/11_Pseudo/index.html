@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 11 - 伪类与伪元素</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS 伪类与伪元素 - 交互与样式增强</h1>
+
+  <section class="lab">
+    <h2>任务 A：链接状态伪类</h2>
+    <p>为链接添加不同状态的样式，提升用户体验</p>
+
+    <div class="container task-a">
+      <a href="#" class="fancy-link">普通链接</a>
+      <a href="#" class="fancy-link visited">已访问链接</a>
+      <a href="#" class="fancy-link hover">悬停链接</a>
+      <a href="#" class="fancy-link active">激活链接</a>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>为链接的不同状态添加样式：未访问、已访问、悬停、激活</li>
+        <li>添加平滑的过渡效果</li>
+        <li>使用伪类选择器：`:link`, `:visited`, `:hover`, `:active`</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 B：结构伪类</h2>
+    <p>使用结构伪类选择器选择特定位置的元素</p>
+
+    <div class="container task-b">
+      <ul class="menu">
+        <li>菜单项 1</li>
+        <li>菜单项 2</li>
+        <li>菜单项 3</li>
+        <li>菜单项 4</li>
+        <li>菜单项 5</li>
+      </ul>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>第一个菜单项：红色背景</li>
+        <li>最后一个菜单项：蓝色背景</li>
+        <li>偶数位置的菜单项：灰色背景</li>
+        <li>第三个菜单项：黄色背景</li>
+        <li>使用结构伪类：`:first-child`, `:last-child`, `:nth-child()`</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 C：伪元素</h2>
+    <p>使用伪元素添加装饰性内容</p>
+
+    <div class="container task-c">
+      <p class="with-quotes">这是一段带有引号的文本，使用伪元素添加引号。</p>
+      <p class="with-arrow">这是一段带有箭头的文本，使用伪元素添加箭头。</p>
+      <div class="card">
+        <h3>卡片标题</h3>
+        <p>卡片内容，使用伪元素添加装饰效果。</p>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>为 `.with-quotes` 添加引号</li>
+        <li>为 `.with-arrow` 添加箭头</li>
+        <li>为 `.card` 添加装饰性边框或背景效果</li>
+        <li>使用伪元素：`::before`, `::after`</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 D：表单伪类</h2>
+    <p>为表单元素添加交互状态样式</p>
+
+    <div class="container task-d">
+      <form class="form-example">
+        <div class="form-group">
+          <label for="name">姓名：</label>
+          <input type="text" id="name" placeholder="请输入姓名">
+        </div>
+        <div class="form-group">
+          <label for="email">邮箱：</label>
+          <input type="email" id="email" placeholder="请输入邮箱" required>
+        </div>
+        <div class="form-group">
+          <label for="message">留言：</label>
+          <textarea id="message" placeholder="请输入留言"></textarea>
+        </div>
+        <button type="submit">提交</button>
+      </form>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>为输入框添加聚焦状态样式</li>
+        <li>为必填字段添加特殊样式</li>
+        <li>为有效的邮箱输入添加绿色边框</li>
+        <li>使用表单伪类：`:focus`, `:required`, `:valid`</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 任务：在 style.css 中完成所有挑战 -->
+</body>
+</html>

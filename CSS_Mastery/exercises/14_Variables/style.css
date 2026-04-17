@@ -1,0 +1,531 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== 全局变量定义 ========== */
+
+:root {
+  /* 颜色变量 */
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  --danger-color: #ef4444;
+  --dark-color: #1e293b;
+  --light-color: #f8fafc;
+  --gray-color: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* 字体变量 */
+  --font-family: system-ui, -apple-system, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  
+  /* 间距变量 */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* 边框变量 */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+  
+  /* 阴影变量 */
+  --box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* 过渡变量 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ========== 基础样式 ========== */
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  padding: var(--spacing-xl);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+h1 {
+  margin-bottom: var(--spacing-2xl);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-2xl);
+}
+
+.lab {
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--dark-color);
+}
+
+p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--gray-color);
+}
+
+.container {
+  border: 2px dashed var(--border-color);
+  background: #f1f5f9;
+  min-height: 200px;
+  padding: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+}
+
+.instructions {
+  background: #f0f9ff;
+  border-left: 4px solid var(--primary-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-lg);
+}
+
+.instructions ul {
+  margin-top: var(--spacing-md);
+  padding-left: var(--spacing-xl);
+}
+
+.instructions li {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========== 任务 A：基本变量定义与使用 ========== */
+
+.task-a {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.variable-box {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  box-shadow: var(--box-shadow-md);
+}
+
+.variable-box:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+.variable-box.basic {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: var(--font-size-lg);
+}
+
+.variable-box.custom {
+  --custom-color: var(--secondary-color);
+  background-color: var(--custom-color);
+  color: white;
+  font-size: var(--font-size-lg);
+}
+
+.variable-box.calculated {
+  --box-width: 200px;
+  --box-height: 150px;
+  --box-color: var(--accent-color);
+  
+  width: var(--box-width);
+  height: var(--box-height);
+  background-color: var(--box-color);
+  color: white;
+  font-size: calc(var(--font-size-base) + 2px);
+}
+
+/* ========== 任务 B：变量作用域 ========== */
+
+.task-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scope-parent {
+  --parent-color: var(--primary-color);
+  padding: var(--spacing-xl);
+  background-color: var(--parent-color);
+  color: white;
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+}
+
+.scope-child {
+  --child-color: var(--secondary-color);
+  margin: var(--spacing-lg) 0 0 var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--child-color);
+  border-radius: var(--border-radius-md);
+}
+
+.scope-grandchild {
+  --grandchild-color: var(--accent-color);
+  margin: var(--spacing-md) 0 0 var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--grandchild-color);
+  border-radius: var(--border-radius-sm);
+}
+
+/* ========== 任务 C：动态修改变量 ========== */
+
+.task-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.dynamic-box {
+  --box-color: var(--primary-color);
+  --box-size: 100px;
+  
+  width: var(--box-size);
+  height: var(--box-size);
+  background-color: var(--box-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  box-shadow: var(--box-shadow-md);
+}
+
+.controls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.controls button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+/* ========== 任务 D：主题切换 ========== */
+
+.task-d {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.theme-demo {
+  --demo-bg: var(--light-color);
+  --demo-text: var(--dark-color);
+  --demo-button: var(--primary-color);
+  
+  padding: var(--spacing-xl);
+  background-color: var(--demo-bg);
+  color: var(--demo-text);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-md);
+  text-align: center;
+  min-width: 300px;
+  transition: all var(--transition-normal);
+}
+
+.theme-demo h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+}
+
+.theme-demo p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--demo-text);
+  opacity: 0.8;
+}
+
+.theme-button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--demo-button);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.theme-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.theme-controls button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.theme-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+/* 主题定义 */
+.theme-light {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  --dark-color: #1e293b;
+  --light-color: #f8fafc;
+  --gray-color: #64748b;
+  --border-color: #e2e8f0;
+}
+
+.theme-dark {
+  --primary-color: #60a5fa;
+  --secondary-color: #34d399;
+  --accent-color: #fbbf24;
+  --dark-color: #f8fafc;
+  --light-color: #0f172a;
+  --gray-color: #94a3b8;
+  --border-color: #334155;
+}
+
+.theme-colorful {
+  --primary-color: #ec4899;
+  --secondary-color: #8b5cf6;
+  --accent-color: #14b8a6;
+  --dark-color: #1e293b;
+  --light-color: #fef2f2;
+  --gray-color: #64748b;
+  --border-color: #fecdd3;
+}
+
+/* 主题应用 */
+.theme-dark .theme-demo {
+  --demo-bg: #1e293b;
+  --demo-text: #f8fafc;
+  --demo-button: #60a5fa;
+}
+
+.theme-colorful .theme-demo {
+  --demo-bg: #fef2f2;
+  --demo-text: #1e293b;
+  --demo-button: #ec4899;
+}
+
+/* ========== 任务 E：变量与响应式设计 ========== */
+
+.task-e {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.responsive-box {
+  --box-width: 200px;
+  --box-height: 150px;
+  --box-color: var(--primary-color);
+  
+  width: var(--box-width);
+  height: var(--box-height);
+  background-color: var(--box-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  box-shadow: var(--box-shadow-md);
+}
+
+.responsive-text {
+  --text-size: var(--font-size-base);
+  font-size: var(--text-size);
+  text-align: center;
+  transition: font-size var(--transition-normal);
+}
+
+/* 响应式变量 */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 0.875rem;
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.125rem;
+  }
+  
+  .task-e {
+    --box-width: 150px;
+    --box-height: 120px;
+    --text-size: var(--font-size-sm);
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+  }
+  
+  .task-e {
+    --box-width: 250px;
+    --box-height: 180px;
+    --text-size: var(--font-size-lg);
+  }
+}
+
+/* ========== 任务 F：变量最佳实践 ========== */
+
+.task-f {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.best-practice-card {
+  --card-bg: white;
+  --card-text: var(--dark-color);
+  --card-border: var(--border-color);
+  --card-shadow: var(--box-shadow-md);
+  --card-hover-shadow: var(--box-shadow-lg);
+  --button-bg: var(--primary-color);
+  --button-hover-bg: #2563eb;
+  
+  padding: var(--spacing-xl);
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
+  min-width: 300px;
+  transition: all var(--transition-normal);
+}
+
+.best-practice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.best-practice-card h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+}
+
+.best-practice-card p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--gray-color);
+}
+
+.card-button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.card-button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+/* ========== 辅助样式 ========== */
+
+code {
+  background: #f1f5f9;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--dark-color);
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-lg);
+  }
+  
+  .lab {
+    padding: var(--spacing-lg);
+  }
+  
+  .container {
+    padding: var(--spacing-lg);
+  }
+  
+  .task-a, .task-f {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .variable-box, .best-practice-card {
+    margin-bottom: var(--spacing-lg);
+  }
+}

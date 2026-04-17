@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 24px;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.lab {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+p {
+  margin-bottom: 16px;
+  color: #6b7280;
+}
+
+.container {
+  border: 2px dashed #94a3b8;
+  background: #ffffff;
+  min-height: 200px;
+  padding: 20px;
+  margin-top: 12px;
+}
+
+.item {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* 特殊样式用于任务 C 和 D */
+.header {
+  background: #ef4444;
+  grid-area: header;
+}
+
+.sidebar {
+  background: #10b981;
+  grid-area: sidebar;
+}
+
+.content {
+  background: #3b82f6;
+  grid-area: content;
+}
+
+.footer {
+  background: #8b5cf6;
+  grid-area: footer;
+}
+
+.item1 {
+  background: #ef4444;
+  grid-column: 1 / 3;
+}
+
+.item2 {
+  background: #f59e0b;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.item3 {
+  background: #10b981;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.item4 {
+  background: #3b82f6;
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.item5 {
+  background: #8b5cf6;
+  grid-row: 1 / 3;
+  grid-column: 3;
+}
+
+.item6 {
+  background: #ec4899;
+  grid-row: 3;
+  grid-column: 1 / 4;
+}
+
+/* 任务 A：基础网格（3×3）
+1) 给 .task-a 开启 Grid 布局
+2) 创建 3 列等宽网格（每列 1fr）
+3) 创建 3 行，每行 80px 高度
+4) 设置行列间距为 12px
+*/
+.task-a {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  gap: 12px;
+}
+
+/* 任务 B：响应式网格（auto-fill）
+1) 给 .task-b 开启 Grid 布局
+2) 使用 repeat() 和 auto-fill 创建自动填充列
+3) 每列最小 150px，最大 1fr
+4) 自动创建行，每行高度 100px
+5) 设置行列间距为 16px
+*/
+.task-b {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 100px;
+  gap: 16px;
+}
+
+/* 任务 C：网格模板区域（页面布局）
+1) 给 .task-c 开启 Grid 布局
+2) 使用 grid-template-areas 定义以下布局：
+   头部占满顶部
+   侧边栏在左侧，内容在右侧
+   底部占满底部
+3) 设置网格：3行（80px 1fr 80px），2列（200px 1fr）
+4) 设置行列间距为 20px
+*/
+.task-c {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+/* 任务 D：复杂项目定位
+1) 给 .task-d 开启 Grid 布局
+2) 创建 3 列（每列 1fr），3 行（每行 100px）
+3) 设置行列间距为 12px
+4) 使用 grid-column / grid-row 定位：
+   - item1：占第1-2列
+   - item2：第2行第1列
+   - item3：第2行第2列
+   - item4：第2行第3列
+   - item5：第1-2行第3列
+   - item6：第3行第1-3列
+*/
+.task-d {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 12px;
+}
+

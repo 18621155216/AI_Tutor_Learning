@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 24px;
+  background: #f5f7fb;
+  color: #1f2937;
+  min-height: 200vh;
+  /* 为了演示 fixed 和 sticky */
+  padding-top: 60px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.lab {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+p {
+  margin-bottom: 16px;
+  color: #6b7280;
+}
+
+.container {
+  border: 2px dashed #94a3b8;
+  background: #ffffff;
+  min-height: 160px;
+  padding: 20px;
+  margin-top: 12px;
+  position: relative;
+  /* 为绝对定位任务准备 */
+}
+
+.box {
+  padding: 16px 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.original {
+  background: #e5e7eb;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.relative {
+  background: #3b82f6;
+  color: white;
+}
+
+.absolute {
+  background: #ef4444;
+  color: white;
+  width: 140px;
+}
+
+.parent {
+  background: #10b981;
+  color: white;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed {
+  background: #f59e0b;
+  color: white;
+}
+
+.sticky {
+  background: #8b5cf6;
+  color: white;
+}
+
+.content-placeholder {
+  height: 80px;
+  background: linear-gradient(45deg, #e5e7eb 25%, #f3f4f6 25%, #f3f4f6 50%, #e5e7eb 50%, #e5e7eb 75%, #f3f4f6 75%, #f3f4f6);
+  background-size: 20px 20px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+
+.content-placeholder.tall {
+  height: 400px;
+}
+
+/* 任务 A：相对定位 (Relative)
+1) 给 .relative 类添加相对定位
+2) 向右移动 40px，向下移动 20px
+3) 设置 z-index: 1 让它浮在上面
+*/
+.task-a .relative {
+  position: relative;
+  top: 20px;
+  left: 40px;
+  /* z-index: 1; */
+}
+
+/* 任务 B：绝对定位 (Absolute)
+1) 给 .absolute 类添加绝对定位
+2) 定位到父容器的右上角（距离顶部 10px，右边 10px）
+3) 父容器 .task-b 已经是 position: relative（上面已设置）
+*/
+.task-b .absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* 任务 C：固定定位 (Fixed)
+1) 给 .fixed 类添加固定定位
+2) 固定在视口顶部，距离顶部 0
+3) 宽度设为 100%（占满整个视口宽度）
+4) 设置 z-index: 1000 确保在最上层
+5) 注意：fixed 元素脱离文档流，需要调整 body 的 padding-top 避免被遮挡
+*/
+.task-c .fixed {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; */
+}
+
+/* 任务 D：粘性定位 (Sticky)
+1) 给 .sticky 类添加粘性定位
+2) 在距离顶部 20px 时变为固定定位
+3) 宽度设为 100%（占满容器宽度）
+*/
+.task-d .sticky {
+  position: sticky;
+  top: 20px;
+  width: 100%;
+}

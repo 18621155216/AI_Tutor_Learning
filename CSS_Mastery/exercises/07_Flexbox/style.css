@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 24px;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.lab {
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.container {
+    border: 2px dashed #94a3b8;
+    background: #ffffff;
+    min-height: 120px;
+    padding: 12px;
+}
+
+.item {
+    background: #3b82f6;
+    color: #fff;
+    border-radius: 8px;
+    padding: 14px 18px;
+    min-width: 72px;
+    text-align: center;
+}
+
+/* 任务 A：
+1) 让 .task-a 开启 Flexbox
+2) 子元素横向排列
+3) 主轴和交叉轴都居中
+4) 子项之间留 12px 间距
+*/
+.task-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 任务 B：
+1) 让 .task-b 开启 Flexbox
+2) 三个元素两端对齐
+3) 在容器内垂直居中
+4) 给容器一个固定高度 100px
+*/
+.task-b {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+/* 任务 C：
+1) 让 .task-c 开启 Flexbox
+2) 允许换行
+3) 每行子项之间间距 10px
+4) 行与行之间间距 10px
+*/
+.task-c {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

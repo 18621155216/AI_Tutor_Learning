@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  --danger-color: #ef4444;
+  --dark-color: #1e293b;
+  --light-color: #f8fafc;
+  --gray-color: #64748b;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  padding: 24px;
+}
+
+h1 {
+  margin-bottom: 32px;
+  color: var(--dark-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.lab {
+  margin-bottom: 48px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--dark-color);
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--gray-color);
+}
+
+.container {
+  border: 2px dashed var(--border-color);
+  background: #f1f5f9;
+  min-height: 200px;
+  padding: 24px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.instructions {
+  background: #f0f9ff;
+  border-left: 4px solid var(--primary-color);
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.instructions ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 6px;
+}
+
+/* ========== 任务 A：基本变换 ========== */
+
+.task-a {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.transform-box {
+  width: 120px;
+  height: 120px;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+}
+
+.transform-box:hover {
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+/* 旋转 */
+.transform-box.rotate {
+  transform: rotate(45deg);
+}
+
+.transform-box.rotate:hover {
+  transform: rotate(90deg);
+}
+
+/* 缩放 */
+.transform-box.scale {
+  transform: scale(1.5);
+}
+
+.transform-box.scale:hover {
+  transform: scale(1.8);
+}
+
+/* 平移 */
+.transform-box.translate {
+  transform: translate(50px, 20px);
+}
+
+.transform-box.translate:hover {
+  transform: translate(70px, 30px);
+}
+
+/* 倾斜 */
+.transform-box.skew {
+  transform: skew(10deg, 5deg);
+}
+
+.transform-box.skew:hover {
+  transform: skew(20deg, 10deg);
+}
+
+/* 组合变换 */
+.transform-box.combine {
+  transform: rotate(15deg) scale(1.2) translate(20px, 10px);
+}
+
+.transform-box.combine:hover {
+  transform: rotate(30deg) scale(1.4) translate(30px, 15px);
+}
+
+/* ========== 任务 B：3D 变换 ========== */
+
+.task-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.stage {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backface-visibility: hidden;
+}
+
+.face.front {
+  background: rgba(59, 130, 246, 0.8);
+  transform: translateZ(50px);
+}
+
+.face.back {
+  background: rgba(16, 185, 129, 0.8);
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.face.right {
+  background: rgba(245, 158, 11, 0.8);
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.face.left {
+  background: rgba(239, 68, 68, 0.8);
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.face.top {
+  background: rgba(139, 92, 246, 0.8);
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.face.bottom {
+  background: rgba(236, 72, 153, 0.8);
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.controls button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* ========== 任务 C：过渡动画 ========== */
+
+.task-c {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.transition-box {
+ 
+{"toolcall":{"thought":"现在我需要创建第13课的CSS文件，包含所有变换与动画的样式定义，包括基本变换、3D变换、过渡动画和关键帧动画。","name":"Write","params":{"file_path":

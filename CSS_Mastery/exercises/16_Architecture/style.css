@@ -1,0 +1,620 @@
+/* ========== 全局变量定义 ========== */
+
+:root {
+    /* 颜色变量 */
+    --color-primary: #3b82f6;
+    --color-primary-dark: #2563eb;
+    --color-secondary: #10b981;
+    --color-secondary-dark: #059669;
+    --color-accent: #f59e0b;
+    --color-accent-dark: #d97706;
+    --color-danger: #ef4444;
+    --color-danger-dark: #dc2626;
+    --color-dark: #1e293b;
+    --color-light: #f8fafc;
+    --color-gray: #64748b;
+    --color-gray-light: #94a3b8;
+    --color-border: #e2e8f0;
+    --color-background: #ffffff;
+
+    /* 字体变量 */
+    --font-family: system-ui, -apple-system, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+
+    /* 间距变量 */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* 边框变量 */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.375rem;
+    --border-radius-lg: 0.5rem;
+    --border-radius-xl: 0.75rem;
+
+    /* 阴影变量 */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* 过渡变量 */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* 布局变量 */
+    --container-width: 1200px;
+    --container-padding: 1rem;
+}
+
+/* ========== 基础样式 ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    padding: var(--spacing-xl);
+}
+
+h1 {
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: var(--spacing-md);
+    text-align: center;
+    font-size: var(--font-size-3xl);
+}
+
+.lab {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+}
+
+p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray);
+    font-size: var(--font-size-base);
+}
+
+.container {
+    border: 2px dashed var(--color-border);
+    background: #f1f5f9;
+    min-height: 200px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+}
+
+.instructions {
+    background: #f0f9ff;
+    border-left: 4px solid var(--color-primary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-lg);
+}
+
+.instructions ul {
+    margin-top: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+}
+
+.instructions li {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ========== 任务 A：BEM 命名规范 ========== */
+
+.task-a {
+    display: flex;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* BEM 卡片样式 */
+.card {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card__header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+    background: #f8fafc;
+}
+
+.card__title {
+    font-size: var(--font-size-xl);
+    color: var(--color-dark);
+    margin-bottom: 0;
+}
+
+.card__body {
+    padding: var(--spacing-lg);
+}
+
+.card__text {
+    margin-bottom: 0;
+    color: var(--color-gray);
+}
+
+.card__footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    background: #f8fafc;
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.card__button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    flex: 1;
+    min-width: 120px;
+}
+
+.card__button--primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.card__button--primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card__button--secondary {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.card__button--secondary:hover {
+    background: var(--color-secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* BEM 修饰符 */
+.card--large {
+    width: 400px;
+}
+
+.card--large .card__header {
+    padding: var(--spacing-xl);
+}
+
+.card--large .card__body {
+    padding: var(--spacing-xl);
+}
+
+.card--large .card__footer {
+    padding: var(--spacing-xl);
+}
+
+/* ========== 任务 B：CSS 变量组织 ========== */
+
+.task-b {
+    display: flex;
+    justify-content: center;
+}
+
+.variable-demo {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.variable-demo h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+}
+
+.variable-box {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    color: white;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+.variable-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.variable-box--primary {
+    background: var(--color-primary);
+}
+
+.variable-box--secondary {
+    background: var(--color-secondary);
+}
+
+.variable-box--accent {
+    background: var(--color-accent);
+}
+
+/* ========== 任务 C：模块化 CSS ========== */
+
+.task-c {
+    display: flex;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 模块化设计 */
+.module {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    flex: 1;
+    min-width: 300px;
+    transition: var(--transition-normal);
+}
+
+.module:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.module h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+}
+
+.module p {
+    margin-bottom: 0;
+    color: var(--color-gray);
+}
+
+/* 模块变体 */
+.module--header {
+    border-top: 4px solid var(--color-primary);
+}
+
+.module--content {
+    border-top: 4px solid var(--color-secondary);
+}
+
+.module--footer {
+    border-top: 4px solid var(--color-accent);
+}
+
+/* ========== 任务 D：响应式设计架构 ========== */
+
+.task-d {
+    display: flex;
+    justify-content: center;
+}
+
+.responsive-layout {
+    display: flex;
+    gap: var(--spacing-xl);
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    max-width: 800px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.responsive-sidebar {
+    flex: 1;
+    min-width: 250px;
+    padding: var(--spacing-lg);
+    background: #f8fafc;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.responsive-content {
+    flex: 2;
+    min-width: 300px;
+    padding: var(--spacing-lg);
+    background: #f8fafc;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.responsive-sidebar h3,
+.responsive-content h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+}
+
+.responsive-sidebar p,
+.responsive-content p {
+    margin-bottom: 0;
+    color: var(--color-gray);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .responsive-layout {
+        flex-direction: column;
+    }
+
+    .responsive-sidebar,
+    .responsive-content {
+        flex: 1 1 100%;
+    }
+}
+
+/* ========== 任务 E：CSS 架构最佳实践 ========== */
+
+.task-e {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--spacing-lg);
+}
+
+.best-practice {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-normal);
+}
+
+.best-practice:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.best-practice h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: var(--spacing-sm);
+}
+
+.best-practice p {
+    margin-bottom: 0;
+    color: var(--color-gray);
+}
+
+/* ========== 任务 F：综合案例 ========== */
+
+.task-f {
+    display: flex;
+    justify-content: center;
+}
+
+/* 应用架构 */
+.app {
+    background: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+/* 应用头部 */
+.app__header {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+}
+
+.app__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 0;
+    color: white;
+}
+
+.app__nav-list {
+    display: flex;
+    gap: var(--spacing-md);
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.app__nav-link {
+    color: white;
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-fast);
+    font-weight: 500;
+}
+
+.app__nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 应用主体 */
+.app__main {
+    flex: 1;
+    padding: var(--spacing-xl);
+}
+
+.app__section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.app__section-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: var(--spacing-md);
+}
+
+.app__section-text {
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-gray);
+    font-size: var(--font-size-base);
+}
+
+.app__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--spacing-lg);
+}
+
+.app__feature {
+    background: #f8fafc;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-normal);
+}
+
+.app__feature:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.app__feature-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.app__feature-text {
+    margin-bottom: 0;
+    color: var(--color-gray);
+    font-size: var(--font-size-sm);
+}
+
+/* 应用底部 */
+.app__footer {
+    background: #f8fafc;
+    padding: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.app__footer-text {
+    margin-bottom: 0;
+    color: var(--color-gray);
+    font-size: var(--font-size-sm);
+}
+
+/* ========== 辅助样式 ========== */
+
+code {
+    background: #f1f5f9;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-sm);
+    color: var(--color-dark);
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-lg);
+    }
+
+    .lab {
+        padding: var(--spacing-lg);
+    }
+
+    .container {
+        padding: var(--spacing-lg);
+    }
+
+    .task-a,
+    .task-c {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .module {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .app__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app__nav-list {
+        width: 100%;
+    }
+
+    .app__nav-item {
+        flex: 1;
+    }
+
+    .app__nav-link {
+        display: block;
+        text-align: center;
+    }
+}

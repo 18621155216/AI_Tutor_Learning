@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 24px;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+h1 {
+  margin-bottom: 32px;
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+
+.lab {
+  margin-bottom: 48px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.container {
+  border: 2px dashed #cbd5e1;
+  background: #f1f5f9;
+  min-height: 200px;
+  padding: 24px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.hint, .instructions {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.hint ol, .instructions ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.hint li, .instructions li {
+  margin-bottom: 6px;
+}
+
+/* ========== 任务 A：特异性计算 ========== */
+
+.task-a .target {
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* 基础样式 - 不要修改这一组 */
+.task-a div { color: gray; }
+.task-a .target { color: black; }
+#target1 { color: red; }
+#target2 { color: purple; }
+.special { color: brown; }
+
+/* 目标1：需要变成绿色 */
+/* 你的代码写在这里 */
+/* 要求：特异性必须高于 #target1 { color: red; } */
+#target1.target {
+  color: green;
+}
+
+/* 目标2：需要变成蓝色 */
+/* 你的代码写在这里 */
+/* 要求：特异性必须高于 #target2 { color: purple; } */
+#target2.target {
+  color: blue;
+}
+
+/* 目标3：需要变成橙色 */
+/* 你的代码写在这里 */
+/* 要求：特异性必须高于 .special { color: brown; } */
+.target.special {
+  color: orange;
+}
+
+/* ========== 任务 B：!important 陷阱 ========== */
+
+.task-b .box {
+  padding: 24px;
+  border-radius: 8px;
+  background: #fecaca; /* 红色背景 */
+  color: #7f1d1d;
+  border: 2px solid #f87171;
+}
+
+.task-b .inner-text {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #450a0a;
+}
+
+/* 内联样式（在 HTML 中）：style="background: #dc2626; color: white;" */
+
+/* 多个竞争样式 */
+#important-box {
+  background: #f59e0b !important; /* 黄色 */
+  color: #78350f;
+}
+
+.task-b div {
+  background: #3b82f6; /* 蓝色 */
+  color: #1e40af !important;
+}
+
+.box {
+  background: #10b981; /* 绿色 */
+  color: #064e3b;
+}
+
+/* 要求：让盒子背景变成黄色（已通过 !important 实现） */
+/* 挑战：让内部文字变成白色，不修改 HTML */
+
+/* 内部文字样式 */
+.task-b p {
+  color: #1e293b;
+}
+
+#important-box p {
+  color: #334155;
+}
+
+.box .inner-text {
+  color: #475569;
+}
+
+/* 你的代码写在这里：让 .inner-text 变成白色 */
+#important-box .inner-text {
+  color: white !important;
+}
+
+/* ========== 任务 C：继承控制 ========== */
+
+.task-c .parent {
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.task-c .child {
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 6px;
+  border: 1px dashed #94a3b8;
+  background: #f8fafc;
+  font-weight: 500;
+}
+
+/* child-inherit：继承父元素的颜色 */
+/* 你的代码写在这里 */
+.child-inherit {
+  color: inherit;
+}
+
+/* child-initial：使用字体大小的初始值 */
+/* 你的代码写在这里 */
+.child-initial {
+  font-size: initial;
+}
+
+/* child-unset：如果是继承属性就继承，否则用初始值 */
+/* 你的代码写在这里 */
+.child-unset {
+  color: unset;
+}
+
+/* 对比用的普通子元素 */
+.child-normal {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ========== 辅助样式 ========== */
+
+.target:hover, .box:hover, .child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #0f172a;
+}

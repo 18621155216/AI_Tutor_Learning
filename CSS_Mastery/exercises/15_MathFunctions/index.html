@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 15 - 现代数学函数</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS 现代数学函数 - 让网页自动适应大小</h1>
+
+  <section class="lab">
+    <h2>任务 A：calc() 函数</h2>
+    <p>使用 calc() 函数进行基本计算</p>
+
+    <div class="container task-a">
+      <div class="calc-box width-calc">宽度计算：100% - 100px</div>
+      <div class="calc-box height-calc">高度计算：200px - 50px</div>
+      <div class="calc-box padding-calc">内边距计算：20px + 10%</div>
+      <div class="calc-box font-calc">字体大小计算：16px + 2vw</div>
+      <div class="calc-box complex-calc">复杂计算：(100% - 20px) / 3</div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>使用 calc() 函数进行各种计算</li>
+        <li>混合不同单位进行计算</li>
+        <li>尝试复杂的计算表达式</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 B：clamp() 函数</h2>
+    <p>使用 clamp() 函数创建响应式值</p>
+
+    <div class="container task-b">
+      <div class="clamp-box font-clamp">字体大小：clamp(1rem, 2vw, 2rem)</div>
+      <div class="clamp-box width-clamp">宽度：clamp(200px, 50%, 500px)</div>
+      <div class="clamp-box padding-clamp">内边距：clamp(10px, 5vw, 30px)</div>
+      <div class="clamp-box margin-clamp">外边距：clamp(10px, 2vw, 20px)</div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>使用 clamp() 函数创建响应式值</li>
+        <li>理解 clamp(min, preferred, max) 的工作原理</li>
+        <li>应用于字体大小、宽度、间距等属性</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 C：min() 和 max() 函数</h2>
+    <p>使用 min() 和 max() 函数选择最小值和最大值</p>
+
+    <div class="container task-c">
+      <div class="minmax-box min-width">最小宽度：min(50%, 500px)</div>
+      <div class="minmax-box max-width">最大宽度：max(300px, 30%)</div>
+      <div class="minmax-box min-font">最小字体：min(24px, 5vw)</div>
+      <div class="minmax-box max-font">最大字体：max(16px, 2vw)</div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>使用 min() 函数选择最小值</li>
+        <li>使用 max() 函数选择最大值</li>
+        <li>应用于不同的 CSS 属性</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 D：数学函数组合使用</h2>
+    <p>组合使用多种数学函数</p>
+
+    <div class="container task-d">
+      <div class="combined-box complex-combination">
+        复杂组合：clamp(1rem, calc(1rem + 2vw), 2rem)
+      </div>
+      <div class="combined-box grid-layout">
+        网格布局：grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr))
+      </div>
+      <div class="combined-box responsive-spacing">
+        响应式间距：padding: clamp(10px, 2vw, 20px)
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>组合使用 calc()、clamp()、min()、max() 函数</li>
+        <li>创建复杂的响应式布局</li>
+        <li>优化不同屏幕尺寸下的显示效果</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 E：数学函数与 CSS 变量</h2>
+    <p>结合 CSS 变量和数学函数</p>
+
+    <div class="container task-e">
+      <div class="variable-math-box">
+        <h3>变量与数学函数结合</h3>
+        <p>使用 CSS 变量定义基础值，通过数学函数计算最终值</p>
+      </div>
+      <div class="controls">
+        <button class="change-base-size">改变基础尺寸</button>
+        <button class="reset">重置</button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>使用 CSS 变量定义基础值</li>
+        <li>通过数学函数计算最终值</li>
+        <li>使用 JavaScript 动态修改变量值</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 F：实际应用案例</h2>
+    <p>数学函数在实际项目中的应用</p>
+
+    <div class="container task-f">
+      <div class="card-container">
+        <div class="card">
+          <h3>卡片标题 1</h3>
+          <p>这是一张使用数学函数实现响应式布局的卡片。</p>
+        </div>
+        <div class="card">
+          <h3>卡片标题 2</h3>
+          <p>卡片的宽度和字体大小会根据屏幕尺寸自动调整。</p>
+        </div>
+        <div class="card">
+          <h3>卡片标题 3</h3>
+          <p>使用 clamp() 函数确保在各种设备上都有良好的显示效果。</p>
+        </div>
+        <div class="card">
+          <h3>卡片标题 4</h3>
+          <p>响应式设计让用户在任何设备上都能获得最佳体验。</p>
+        </div>
+      </div>
+      
+      <div class="hero-section">
+        <h2>响应式英雄区域</h2>
+        <p>使用数学函数实现自适应的英雄区域高度和字体大小</p>
+        <button class="hero-button">了解更多</button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>使用数学函数实现响应式卡片布局</li>
+        <li>创建自适应的英雄区域</li>
+        <li>确保在各种屏幕尺寸下都有良好的显示效果</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    // 任务 E：数学函数与 CSS 变量
+    const variableMathBox = document.querySelector('.variable-math-box');
+    const changeBaseSizeBtn = document.querySelector('.change-base-size');
+    const resetBtn = document.querySelector('.reset');
+    
+    let baseSize = 16;
+    
+    function updateVariableMath() {
+      variableMathBox.style.setProperty('--base-size', baseSize + 'px');
+    }
+    
+    changeBaseSizeBtn.addEventListener('click', () => {
+      baseSize = baseSize === 16 ? 20 : 16;
+      updateVariableMath();
+    });
+    
+    resetBtn.addEventListener('click', () => {
+      baseSize = 16;
+      updateVariableMath();
+    });
+  </script>
+</body>
+</html>

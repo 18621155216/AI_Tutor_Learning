@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 16 - CSS 架构思路</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS 架构思路 - 如何写出好维护、不乱套的 CSS 代码</h1>
+
+  <section class="lab">
+    <h2>任务 A：BEM 命名规范</h2>
+    <p>使用 BEM (Block, Element, Modifier) 命名规范组织 CSS 类名</p>
+
+    <div class="container task-a">
+      <div class="card">
+        <div class="card__header">
+          <h3 class="card__title">BEM 卡片标题</h3>
+        </div>
+        <div class="card__body">
+          <p class="card__text">这是一张使用 BEM 命名规范的卡片，展示了如何组织 CSS 类名。</p>
+        </div>
+        <div class="card__footer">
+          <button class="card__button card__button--primary">主要按钮</button>
+          <button class="card__button card__button--secondary">次要按钮</button>
+        </div>
+      </div>
+      
+      <div class="card card--large">
+        <div class="card__header">
+          <h3 class="card__title">大型 BEM 卡片</h3>
+        </div>
+        <div class="card__body">
+          <p class="card__text">这是一张大型卡片，使用了 BEM 的修饰符来改变样式。</p>
+        </div>
+        <div class="card__footer">
+          <button class="card__button card__button--primary">了解更多</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>使用 BEM 命名规范组织 CSS 类名</li>
+        <li>理解 Block、Element、Modifier 的概念</li>
+        <li>正确使用 BEM 命名约定</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 B：CSS 变量组织</h2>
+    <p>使用 CSS 变量组织样式值</p>
+
+    <div class="container task-b">
+      <div class="variable-demo">
+        <h3>变量组织演示</h3>
+        <div class="variable-box variable-box--primary">主要变量</div>
+        <div class="variable-box variable-box--secondary">次要变量</div>
+        <div class="variable-box variable-box--accent">强调变量</div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>组织 CSS 变量的结构</li>
+        <li>使用有意义的变量命名</li>
+        <li>在样式中使用变量</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 C：模块化 CSS</h2>
+    <p>创建模块化的 CSS 结构</p>
+
+    <div class="container task-c">
+      <div class="module module--header">
+        <h3>头部模块</h3>
+        <p>这是一个头部模块，展示了模块化 CSS 的组织方式。</p>
+      </div>
+      
+      <div class="module module--content">
+        <h3>内容模块</h3>
+        <p>这是一个内容模块，展示了如何创建可复用的 CSS 模块。</p>
+      </div>
+      
+      <div class="module module--footer">
+        <h3>底部模块</h3>
+        <p>这是一个底部模块，展示了模块化 CSS 的优势。</p>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>创建模块化的 CSS 结构</li>
+        <li>确保模块的可复用性</li>
+        <li>避免模块间的样式冲突</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 D：响应式设计架构</h2>
+    <p>创建响应式设计的架构</p>
+
+    <div class="container task-d">
+      <div class="responsive-layout">
+        <div class="responsive-sidebar">
+          <h3>侧边栏</h3>
+          <p>在小屏幕上会移动到顶部</p>
+        </div>
+        <div class="responsive-content">
+          <h3>内容区</h3>
+          <p>在不同屏幕尺寸下会自动调整布局</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>创建响应式设计的架构</li>
+        <li>使用媒体查询和相对单位</li>
+        <li>确保在不同设备上的良好体验</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 E：CSS 架构最佳实践</h2>
+    <p>学习 CSS 架构的最佳实践</p>
+
+    <div class="container task-e">
+      <div class="best-practice">
+        <h3>最佳实践 1：代码组织</h3>
+        <p>按功能和模块组织 CSS 代码，使用一致的命名规范。</p>
+      </div>
+      
+      <div class="best-practice">
+        <h3>最佳实践 2：性能优化</h3>
+        <p>减少 CSS 体积，避免使用过于复杂的选择器，使用 CSS 变量提高可维护性。</p>
+      </div>
+      
+      <div class="best-practice">
+        <h3>最佳实践 3：可访问性</h3>
+        <p>确保 CSS 不会影响网站的可访问性，使用适当的颜色对比度和字体大小。</p>
+      </div>
+      
+      <div class="best-practice">
+        <h3>最佳实践 4：浏览器兼容性</h3>
+        <p>考虑不同浏览器的兼容性，使用适当的前缀和回退方案。</p>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>学习 CSS 架构的最佳实践</li>
+        <li>理解代码组织的重要性</li>
+        <li>掌握性能优化的方法</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 F：综合案例</h2>
+    <p>创建一个使用现代 CSS 架构的综合案例</p>
+
+    <div class="container task-f">
+      <div class="app">
+        <header class="app__header">
+          <h2 class="app__title">现代 CSS 架构示例</h2>
+          <nav class="app__nav">
+            <ul class="app__nav-list">
+              <li class="app__nav-item"><a href="#" class="app__nav-link">首页</a></li>
+              <li class="app__nav-item"><a href="#" class="app__nav-link">关于</a></li>
+              <li class="app__nav-item"><a href="#" class="app__nav-link">服务</a></li>
+              <li class="app__nav-item"><a href="#" class="app__nav-link">联系</a></li>
+            </ul>
+          </nav>
+        </header>
+        
+        <main class="app__main">
+          <section class="app__section">
+            <h3 class="app__section-title">欢迎使用现代 CSS 架构</h3>
+            <p class="app__section-text">
+              这个示例展示了如何使用现代 CSS 架构创建一个可维护、可扩展的网站。
+              我们使用了 BEM 命名规范、CSS 变量、模块化设计等最佳实践。
+            </p>
+            <div class="app__features">
+              <div class="app__feature">
+                <h4 class="app__feature-title">BEM 命名</h4>
+                <p class="app__feature-text">使用 BEM 命名规范组织 CSS 类名，提高代码可读性和可维护性。</p>
+              </div>
+              <div class="app__feature">
+                <h4 class="app__feature-title">CSS 变量</h4>
+                <p class="app__feature-text">使用 CSS 变量管理样式值，实现一键换肤和全局样式控制。</p>
+              </div>
+              <div class="app__feature">
+                <h4 class="app__feature-title">模块化设计</h4>
+                <p class="app__feature-text">创建可复用的 CSS 模块，提高代码的可维护性和可扩展性。</p>
+              </div>
+            </div>
+          </section>
+        </main>
+        
+        <footer class="app__footer">
+          <p class="app__footer-text">© 2026 现代 CSS 架构示例</p>
+        </footer>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>要求：</strong>
+      <ul>
+        <li>创建一个使用现代 CSS 架构的综合案例</li>
+        <li>应用 BEM 命名规范、CSS 变量、模块化设计等最佳实践</li>
+        <li>确保代码的可维护性和可扩展性</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

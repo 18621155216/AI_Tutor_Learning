@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14 - CSS 变量</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>CSS 变量 - 一键换肤的秘密</h1>
+
+    <section class="lab">
+        <h2>任务 A：基本变量定义与使用</h2>
+        <p>在 :root 中定义变量，并在元素中使用</p>
+
+        <div class="container task-a">
+            <div class="variable-box basic">基本变量使用</div>
+            <div class="variable-box custom">自定义变量</div>
+            <div class="variable-box calculated">变量计算</div>
+        </div>
+
+        <div class="instructions">
+            <strong>要求：</strong>
+            <ul>
+                <li>在 :root 中定义颜色、字体大小等变量</li>
+                <li>在元素中使用 var() 函数引用变量</li>
+                <li>尝试使用变量进行计算</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lab">
+        <h2>任务 B：变量作用域</h2>
+        <p>了解变量的作用域规则</p>
+
+        <div class="container task-b">
+            <div class="scope-parent">
+                父元素（使用根变量）
+                <div class="scope-child">
+                    子元素（使用父元素变量）
+                    <div class="scope-grandchild">
+                        孙元素（使用局部变量）
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <strong>要求：</strong>
+            <ul>
+                <li>理解变量的继承规则</li>
+                <li>了解如何在不同作用域中定义和使用变量</li>
+                <li>观察变量覆盖的效果</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lab">
+        <h2>任务 C：动态修改变量</h2>
+        <p>使用 JavaScript 动态修改变量值</p>
+
+        <div class="container task-c">
+            <div class="dynamic-box">动态变量演示</div>
+            <div class="controls">
+                <button class="change-color">改变颜色</button>
+                <button class="change-size">改变大小</button>
+                <button class="reset">重置</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <strong>要求：</strong>
+            <ul>
+                <li>使用 JavaScript 获取和设置 CSS 变量</li>
+                <li>实现动态修改变量的功能</li>
+                <li>观察变量变化对元素样式的影响</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lab">
+        <h2>任务 D：主题切换</h2>
+        <p>使用 CSS 变量实现主题切换功能</p>
+
+        <div class="container task-d">
+            <div class="theme-demo">
+                <h3>主题演示</h3>
+                <p>这是一段示例文本，用于展示主题切换效果。</p>
+                <button class="theme-button">主题按钮</button>
+            </div>
+            <div class="theme-controls">
+                <button class="theme-light">浅色主题</button>
+                <button class="theme-dark">深色主题</button>
+                <button class="theme-colorful">彩色主题</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <strong>要求：</strong>
+            <ul>
+                <li>为不同主题定义变量集</li>
+                <li>通过切换类名实现主题切换</li>
+                <li>确保所有元素都能响应主题变化</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lab">
+        <h2>任务 E：变量与响应式设计</h2>
+        <p>结合 CSS 变量和媒体查询实现响应式效果</p>
+
+        <div class="container task-e">
+            <div class="responsive-box">响应式变量演示</div>
+            <p class="responsive-text">调整浏览器窗口大小，观察文本大小变化</p>
+        </div>
+
+        <div class="instructions">
+            <strong>要求：</strong>
+            <ul>
+                <li>在媒体查询中修改变量值</li>
+                <li>使用变量实现响应式排版</li>
+                <li>确保布局在不同屏幕尺寸下都能正常显示</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lab">
+        <h2>任务 F：变量最佳实践</h2>
+        <p>学习 CSS 变量的最佳实践</p>
+
+        <div class="container task-f">
+            <div class="best-practice-card">
+                <h3>卡片标题</h3>
+                <p>这是一张使用 CSS 变量的卡片，展示了变量的最佳实践。</p>
+                <button class="card-button">点击我</button>
+            </div>
+            <div class="best-practice-card">
+                <h3>另一张卡片</h3>
+                <p>使用相同的变量定义，保持样式一致性。</p>
+                <button class="card-button">了解更多</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <strong>要求：</strong>
+            <ul>
+                <li>组织变量的命名和结构</li>
+                <li>使用变量保持样式一致性</li>
+                <li>避免变量命名冲突</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // 任务 C：动态修改变量
+        const dynamicBox = document.querySelector('.dynamic-box');
+        const changeColorBtn = document.querySelector('.change-color');
+        const changeSizeBtn = document.querySelector('.change-size');
+        const resetBtn = document.querySelector('.reset');
+
+        // 颜色数组
+        const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+        let colorIndex = 0;
+
+        // 改变颜色
+        changeColorBtn.addEventListener('click', () => {
+            colorIndex = (colorIndex + 1) % colors.length;
+            dynamicBox.style.setProperty('--box-color', colors[colorIndex]);
+        });
+
+        // 改变大小
+        let size = 100;
+        changeSizeBtn.addEventListener('click', () => {
+            size = size === 100 ? 150 : 100;
+            dynamicBox.style.setProperty('--box-size', size + 'px');
+        });
+
+        // 重置
+        resetBtn.addEventListener('click', () => {
+            dynamicBox.style.removeProperty('--box-color');
+            dynamicBox.style.removeProperty('--box-size');
+        });
+
+        // 任务 D：主题切换
+        const body = document.body;
+        const themeLightBtn = document.querySelector('.theme-light');
+        const themeDarkBtn = document.querySelector('.theme-dark');
+        const themeColorfulBtn = document.querySelector('.theme-colorful');
+
+        themeLightBtn.addEventListener('click', () => {
+            body.classList.remove('theme-dark', 'theme-colorful');
+            body.classList.add('theme-light');
+        });
+
+        themeDarkBtn.addEventListener('click', () => {
+            body.classList.remove('theme-light', 'theme-colorful');
+            body.classList.add('theme-dark');
+        });
+
+        themeColorfulBtn.addEventListener('click', () => {
+            body.classList.remove('theme-light', 'theme-dark');
+            body.classList.add('theme-colorful');
+        });
+    </script>
+</body>
+
+</html>

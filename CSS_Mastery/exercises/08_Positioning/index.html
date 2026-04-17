@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 08 - Positioning 练习</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>CSS 定位：五种"漂浮"模式</h1>
+
+  <section class="lab">
+    <h2>任务 A：相对定位 (Relative)</h2>
+    <p>微调元素位置，不脱离文档流</p>
+    <div class="container task-a">
+      <div class="box original">原始位置</div>
+      <div class="box relative">相对定位</div>
+      <div class="box original">原始位置</div>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 D：粘性定位 (Sticky)</h2>
+    <p>到达阈值前是 relative，到达后变为 fixed</p>
+    <div class=" task-d">
+      <div class="box sticky">粘性表头</div>
+      <div class="content-placeholder tall"></div>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 B：绝对定位 (Absolute)</h2>
+    <p>相对于父容器定位，常用于弹出层</p>
+    <div class="container task-b">
+      <div class="box parent">父容器（需设置相对定位）</div>
+      <div class="box absolute">绝对定位子元素</div>
+    </div>
+  </section>
+
+  <section class="lab">
+    <h2>任务 C：固定定位 (Fixed)</h2>
+    <p>相对于浏览器窗口，不随滚动移动</p>
+    <div class="container task-c">
+      <div class="box fixed">固定导航栏</div>
+      <p>滚动页面看看这个元素是否固定在视口顶部</p>
+      <div class="content-placeholder"></div>
+    </div>
+  </section>
+
+
+
+  <!-- 任务：在 style.css 中完成注释要求 -->
+</body>
+
+</html>
