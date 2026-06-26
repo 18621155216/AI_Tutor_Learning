@@ -179,6 +179,7 @@ display：inline-block
 
 在浏览器中行内元素或者行内块元素的排版中存在用于对齐的基线
 ![](assets/learnnote/file-20260401162150428.jpg)
+
 在有文字和图片的时候，想要文字和图片垂直居中对齐：
 ```css
  .item img {
@@ -192,6 +193,8 @@ display：inline-block
 - 背景平铺   background-repeat   repeat no-repeat repeat-x repeat-y
 - 背景图片位置  background-position  x坐标  y坐标  或者方位名词
 - 背景图片大小 background-size  auto  cover  contain  xxpx xxpx
+	- 如果要使用cover缩放一定要指示背景的位置，比如center/cover等
+	- 或者left/1300px 500px 设置靠左长1300、高500
 - 背景图像固定  background-attachment  默认scroll  设置fixed  背景固定
 
 背景渐变：
@@ -479,6 +482,8 @@ block  inline  inline-block
 - 如果子元素没有大小，则拉伸充满父容器
 - 如果子元素的总宽度超过容器宽度，默认会压缩子元素
 
+行内元素给了flex布局以后会直接变成块级元素
+
 主轴对齐方式  justify-content：
 - flex-start   默认左对齐
 - flex-end   右对齐
@@ -665,12 +670,16 @@ flex是一维的，只有一个方向
 		- 速度曲线
 		- 延迟时间
 
+如果一次有多个动过，比如又旋转又移动，需要transform的组合写法，不然后写的会覆盖先写的，执行顺序是写在后面的先执行
+transform：A（） B（） C（）
+执行顺序：C=》B=》A
+
 ### 3D
 - 旋转  rotateX/Y/Z
 - 透视  perspective  
 	- 给父元素添加，子元素都会有效果
 	- 给子元素添加，当前元素有效果
-	- 多个属性：又透视又旋转的时候，透视一定是第一个属性
+	- 多个属性：又透视又旋转的时候，透视一定是第一个属性，不然没有效果
 	- backface-visibility：hidden，旋转到背面的时候不显示
 - 位移  translateX/Y/Z  translate3d(x, y, z)
 	- transform-style：默认flat  preserve-3d会开启3d
@@ -680,9 +689,45 @@ flex是一维的，只有一个方向
 	- 关键帧就是核心节点，中间通过算法自动实现连续的动画效果
 	- 定义动画--使用动画
 		- @keyframes 名称{ 关键帧{}  关键帧{}  xxx}
+			- 多个的话写百分比：10%、20%……
+			- 只有两个的话可以写：from 、 to
 		- animation：名称  时间  速度曲线  延迟时间  播放次数  播放方向  执行完毕状态，名称和时长是必写的
 	- ![](assets/learnnote/file-20260408175534038.png)
 	- 逐帧动画  steps  搭配精灵图来实现
+		- 比如设置一个很长的精灵图当背景，然后精灵图有多少张图片就走多少步，设置动画
+		- ```html
+		  @keyframes mymove {
+
+            from {
+
+                background-position: 0 0;
+
+            }
+
+  
+
+            to {
+
+                background-position: -1300px 0;
+
+            }
+
+        }
+
+  
+
+        .box {
+
+            width: 100px;
+
+            height: 100px;
+
+            background: url(./img/step.png) no-repeat left/1300px 500px;
+
+            animation: mymove 4s steps(25) infinite;
+
+        }
+		  ```
 
 ### SVG图片
 ![](assets/learnnote/file-20260409104221322.png)
