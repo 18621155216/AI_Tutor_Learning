@@ -4,6 +4,10 @@ javascript
 - 基本数据类型
 	- 数字类型  Number  整数，小数
 	- 字符串类型  String  模板写法
+    - boolean 布尔型
+    - undefined 未定义类型
+    - null 空类型
+- 引用数据lexington  
 	- 对象  Object
 
 ```javascript
